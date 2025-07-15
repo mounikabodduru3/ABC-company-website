@@ -34,3 +34,17 @@ app.post('/api/heading', async (req, res) => {
 });
 
 app.listen(5000, () => console.log('Server running on port 5000'));
+
+const path = require('path');
+
+// Serve static files
+app.use(express.static(path.join(__dirname, '../client')));
+
+// Fallback for HTML pages
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/landing.html'));
+});
+
+app.get('/cms', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/cms.html'));
+});
