@@ -168,7 +168,7 @@ body {
 @media (min-width: 768px) {
   .hero-inner {
     flex-direction: row;
-    align-items: flex-start; /* ⬅️ KEY FIX: aligns top not center */
+    align-items: flex-start; 
     gap: 60px;
   }
 
