@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="../styles/landing.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <header class="navbar">
+  <div class="navbar-left">
+    <span class="logo">ABC Company</span>
+  </div>
+
+  <div class="navbar-center">
+    <a href="#">About</a>
+    <a href="#">Services</a>
+  </div>
+
+  <div class="navbar-right">
+    <a href="cms.html" class="cms-button">Go to CMS</a>
+  </div>
+</header>
+
+    
+<section class="hero-section">
+  <div class="hero-inner">
+    <div class="hero-content">
+       <h1 class="hero-heading" id="main-heading">Loading...</h1>
+      <p>
+        Powerful AI solutions that go beyond mere data sorting and exploration. Use our array of AI-enabled solutions that understand your business and recommend the optimal way forward.
+      </p>
+      <button class="cta-button">Get started</button>
+    </div>
+
+    <div class="hero-image">
+      <img src="/images/c257a9595ce3eddd17534d8cb91a80062f10fbff.png" alt="AI Illustration" />
+    </div>
+  </div>
+</section>
+
+<section class="timeline-section">
+  <!-- TOP 2 boxes -->
+  <div class="timeline-boxes top">
+    <div class="box">
+      <div class="fa-icon">
+        <i class="fa-solid fa-forward"></i>
+      </div>
+      <h3>Ready to Go Algos</h3>
+      <p>We have ready accelerators embedded with learnings from hundreds of past projects, generating actionable results.</p>
+    </div>
+    <div class="box">
+      <div class="fa-icon">
+        <i class="fa-solid fa-diagram-project"></i>
+      </div>
+      <h3>Internal capability building</h3>
+      <p>We productize all our work, enhance them with the latest AI technology, and train your internal teams to leverage them.</p>
+    </div>
+  </div>
+
+  <!-- Timeline Dots -->
+  <div class="timeline-line">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- BOTTOM 3 boxes -->
+  <div class="timeline-boxes bottom">
+    <div class="box">
+      <div class="fa-icon">
+        <i class="fa-solid fa-database"></i>
+      </div>
+      <h3>Multi-source data</h3>
+      <p>Our solutions work with old, new, or incomplete datasets, in different formats, and from varied sources.</p>
+    </div>
+    <div class="box">
+      <div class="fa-icon">
+                <i class="fa-solid fa-suitcase"></i>
+      </div>
+      <h3>Stakeholder alignment</h3>
+      <p>No black boxes. Stakeholders understand the “how”, “so what” and “now what”.</p>
+    </div>
+    <div class="box">
+      <div class="fa-icon">
+       <i class="fa-solid fa-arrows-rotate"></i>
+      </div>
+      <h3>Continuous engagement</h3>
+      <p>We engage in the long-term to enhance, course-correct, and adopt new models to continuously refine your work.</p>
+    </div>
+  </div>
+</section>
+
+
+  <script>
+    fetch("http://localhost:5000/api/heading")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("main-heading").innerText = data?.text || "Default Heading";
+      });
+  </script>
+</body>
+</html>

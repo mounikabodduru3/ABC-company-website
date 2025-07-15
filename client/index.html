@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ABC Company</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    function loadPage(page) {
+      fetch(page)
+        .then(res => res.text())
+        .then(html => document.getElementById('root').innerHTML = html);
+    }
+
+    const route = location.hash.replace('#', '') || 'landing';
+    loadPage(`./pages/${route}.html`);
+
+    window.onhashchange = () => {
+      const route = location.hash.replace('#', '');
+      loadPage(`./pages/${route}.html`);
+    };
+  </script>
+</body>
+</html>
